@@ -12,22 +12,22 @@ namespace practice3_string_
 {
     public partial class Form1 : Form
     {
-        string text = "멈추지 않는 한 얼마나 천천히 가는지는 중요하지 않다. -공자";
+        string message = "멈추지 않는 한 얼마나 천천히 가는지는 중요하지 않다. -공자";
         
         public Form1()
         {
             InitializeComponent();
             string result1;
-            result1 = text.Remove(text.IndexOf(" -"));
+            result1 = message.Remove(message.IndexOf(" -"));
 
             string result2;
-            result2 = text.Substring(text.IndexOf("한") + 2);
+            result2 = message.Substring(message.IndexOf("한") + 2);
             result2 = result2.Remove(result2.IndexOf("중요") - 1);
             string[] result2_array = result2.Split(' ');
             result2_array[2] = result2_array[2].Remove(result2_array[2].LastIndexOf("는"));
 
             string result3;
-            result3 = text.Replace(".", "");
+            result3 = message.Replace(".", "");
             result3 = result3.Replace("-", "");
             result3 = result3.Replace(" ", ",");
 
