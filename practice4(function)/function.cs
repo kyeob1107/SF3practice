@@ -18,8 +18,10 @@ namespace practice4_function_
             InitializeComponent();
             //int[] value = Div_mod(7, 5);
             int[] value = Div_mod(int.Parse(div_x.Text), int.Parse(div_y.Text));
-            textBox_print.Text = "몫은 " + value[0].ToString();
-            textBox_print.Text += ", 나머지는 " + value[1].ToString();
+            //textBox_print.Text = "몫은 " + value[0].ToString();
+            //textBox_print.Text += ", 나머지는 " + value[1].ToString();
+            textBox_print.Text = $"몫은 {value[0].ToString()}, ";
+            textBox_print.Text += $"나머지는 {value[1].ToString()}";
         }
 
         public int[] Div_mod(int x, int y)
@@ -37,8 +39,10 @@ namespace practice4_function_
             //form(function)그냥은 못쓰고 따로 객체로 만들어야 가능하다고 해서
             //일단 그렇게 알고 패스
             int[] value = Div_mod(int.Parse(div_x.Text), int.Parse(div_y.Text));
-            textBox_print.Text = "몫은 " + value[0].ToString();
-            textBox_print.Text += ", 나머지는 " + value[1].ToString();
+            //textBox_print.Text = "몫은 " + value[0].ToString();
+            //textBox_print.Text += ", 나머지는 " + value[1].ToString();
+            textBox_print.Text = $"몫은 {value[0].ToString()}, ";
+            textBox_print.Text += $"나머지는 {value[1].ToString()}";
         }
     }
 }
