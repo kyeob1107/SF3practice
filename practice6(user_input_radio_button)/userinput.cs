@@ -78,12 +78,22 @@ namespace practice6_user_input_radio_button_
             List<string> true_means = new List<string> { "T", "true" };
             List<string> false_means = new List<string> { "F", "false" };
 
-            if (true_means.Any(s => s == textBox_input.Text))
+            //if (true_means.Any(s => s == textBox_input.Text))
+            //{
+            //    prediction_1 = true;
+            //    textBox_result.Text = "True로 체크확인";
+            //}
+            //else if (false_means.Any(s => s == textBox_input.Text))
+            //{
+            //    prediction_1 = false;
+            //    textBox_result.Text = "False로 체크확인";
+            //}
+            if (true_means.Any(s => s.Equals(textBox_input.Text, StringComparison.OrdinalIgnoreCase)))
             {
                 prediction_1 = true;
                 textBox_result.Text = "True로 체크확인";
             }
-            else if (false_means.Any(s => s == textBox_input.Text))
+            else if (false_means.Any(s => s.Equals(textBox_input.Text, StringComparison.OrdinalIgnoreCase)))
             {
                 prediction_1 = false;
                 textBox_result.Text = "False로 체크확인";
