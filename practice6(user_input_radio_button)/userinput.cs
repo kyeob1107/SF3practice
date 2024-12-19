@@ -89,28 +89,28 @@ namespace practice6_user_input_radio_button_
             if (true_means.Any(s => s.Equals(textBox_input.Text, StringComparison.OrdinalIgnoreCase)))
             {
                 prediction_1 = true;
-                textBox_result.Text = "입력모드\r\n";
-                print(prediction_1);
+                textBox_result.Text = "(입력모드)\r\n";
             }
             else if (false_means.Any(s => s.Equals(textBox_input.Text, StringComparison.OrdinalIgnoreCase)))
             {
                 prediction_1 = false;
-                textBox_result.Text = "입력모드\r\n";
-                print(prediction_1);
+                textBox_result.Text = "(입력모드)\r\n";
             }
-            //print(prediction_1);
+            
             else
             {
                 textBox_result.Text = $"잘못된 값을 입력하셨습니다: {textBox_input.Text}";
                 textBox_result.Text += "\r\n<(대소문자 상관없이)T, F, true, false이외의 값 입력>";
+                return;
             }
+            print(prediction_1);
         }
         private void radioButton_true_CheckedChanged(object sender, EventArgs e)
         {
             if (textBox_input.Text == "")
             {
                 prediction_1 = true;
-                textBox_result.Text = "라디오버튼모드\r\n";
+                textBox_result.Text = "(라디오버튼모드)\r\n";
                 print(prediction_1);
             }
             
@@ -121,7 +121,7 @@ namespace practice6_user_input_radio_button_
             if (textBox_input.Text == "")
             {
                 prediction_1 = false;
-                textBox_result.Text = "라디오버튼모드\r\n";
+                textBox_result.Text = "(라디오버튼모드)\r\n";
                 print(prediction_1);
             }
             
