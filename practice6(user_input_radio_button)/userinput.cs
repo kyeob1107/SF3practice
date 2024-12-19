@@ -16,7 +16,6 @@ namespace practice6_user_input_radio_button_
         public userinput()
         {
             InitializeComponent();
-            //textBox_result.Text = prediction_1.ToString(); //초기값 뭘로 되어있나 확인용
         }
         public bool Coin_toss_result(bool prediction)
         {
@@ -48,7 +47,6 @@ namespace practice6_user_input_radio_button_
             //랜덤부분 문자열변환
             if (coin) { coin_str = "앞면"; }
             else { coin_str = "뒷면"; }
-            textBox_result.Text += prediction.ToString() + "\r\n";
             textBox_result.Text += $"예측은 {prediction_str}\r\n실제는 {coin_str}";
 
             return result;
@@ -73,11 +71,10 @@ namespace practice6_user_input_radio_button_
 
         private void button_input_Click(object sender, EventArgs e)
         {
-            textBox_result.Text = "";
-            //textBox_result.Text = textBox_input.Text;
             List<string> true_means = new List<string> { "T", "true" };
             List<string> false_means = new List<string> { "F", "false" };
 
+            // 대소문자 구분하는 상태로 정해둔 것만 인식하려고 할 때 방법
             //if (true_means.Any(s => s == textBox_input.Text))
             //{
             //    prediction_1 = true;
@@ -88,26 +85,35 @@ namespace practice6_user_input_radio_button_
             //    prediction_1 = false;
             //    textBox_result.Text = "False로 체크확인";
             //}
+
             if (true_means.Any(s => s.Equals(textBox_input.Text, StringComparison.OrdinalIgnoreCase)))
             {
                 prediction_1 = true;
-                textBox_result.Text = "True로 체크확인";
+                textBox_result.Text = "입력모드\r\n";
+                print(prediction_1);
             }
             else if (false_means.Any(s => s.Equals(textBox_input.Text, StringComparison.OrdinalIgnoreCase)))
             {
                 prediction_1 = false;
-                textBox_result.Text = "False로 체크확인";
+                textBox_result.Text = "입력모드\r\n";
+                print(prediction_1);
             }
-            print(prediction_1);
+            //print(prediction_1);
+            else
+            {
+                textBox_result.Text = $"잘못된 값을 입력하셨습니다: {textBox_input.Text}";
+                textBox_result.Text += "\r\n<(대소문자 상관없이)T, F, true, false이외의 값 입력>";
+            }
         }
         private void radioButton_true_CheckedChanged(object sender, EventArgs e)
         {
             if (textBox_input.Text == "")
             {
                 prediction_1 = true;
-                //MessageBox.Show("라디오 True");
+                textBox_result.Text = "라디오버튼모드\r\n";
+                print(prediction_1);
             }
-            print(prediction_1);
+            
         }
 
         private void radioButton_false_CheckedChanged(object sender, EventArgs e)
@@ -115,9 +121,10 @@ namespace practice6_user_input_radio_button_
             if (textBox_input.Text == "")
             {
                 prediction_1 = false;
-                //MessageBox.Show("라디오 False");
+                textBox_result.Text = "라디오버튼모드\r\n";
+                print(prediction_1);
             }
-            print(prediction_1);
+            
         }
     }
 }
