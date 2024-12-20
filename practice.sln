@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "practice6(user_input_radio_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "practice7(switch)", "practice7(switch)\practice7(switch).csproj", "{EAF5EEC2-6565-407E-8C1C-4CEF0AE0AB2C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "practice8(for)", "practice8(for)\practice8(for).csproj", "{9C4F3C12-F668-4A70-BE92-9C3AE72FEB57}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{EAF5EEC2-6565-407E-8C1C-4CEF0AE0AB2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EAF5EEC2-6565-407E-8C1C-4CEF0AE0AB2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EAF5EEC2-6565-407E-8C1C-4CEF0AE0AB2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C4F3C12-F668-4A70-BE92-9C3AE72FEB57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C4F3C12-F668-4A70-BE92-9C3AE72FEB57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C4F3C12-F668-4A70-BE92-9C3AE72FEB57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C4F3C12-F668-4A70-BE92-9C3AE72FEB57}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
