@@ -40,13 +40,13 @@ namespace practice8_for_
         int[] Give_student_score(int number)
         {
             int[] student_scores = new int[students_number + 1];
-            //우선 시드 정해지는 걸텐데 이렇게 하면 동일하게 될것으로 예상
-            //테스트 결과 다르게 나와서 random에 대해 더 알아봐야할듯
+            //랜덤 객체 생성
             Random random = new Random();
+            //반복문으로 학생수만큼 점수부여
             for (int i = 1; i < students_number + 1; i++)
             {
                 //Random random = new Random();
-                student_scores[i] = random.Next(100); //100이하의 정수
+                student_scores[i] = random.Next(101); //101미만의 정수
             }
 
             return student_scores;
