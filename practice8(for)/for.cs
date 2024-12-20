@@ -21,13 +21,22 @@ namespace practice8_for_
 
         private void button_input_Click(object sender, EventArgs e)
         {
-            //텍스트박스 입력으로 숫자받음(아닐 경우 체크기능 추가해야함)
-            students_number = int.Parse(textBox_input.Text);
-            int[] scores = Give_student_score(students_number);
-            student_name_score_print(scores);
+            //텍스트박스 입력으로 숫자받음
+            if (int.TryParse(textBox_input.Text, out students_number))
+            {
+                int[] scores = Give_student_score(students_number);
+                student_name_score_print(scores);
+            }
+            //입력값이 숫자가 아닐경우
+            else
+            {
+                textBox_result.Text = $"숫자가 아닌 값을 입력하였습니다: {textBox_input.Text}";
+                return;
+            }
+            
         }
 
-        //랜덤하게 점수 부여
+        //랜덤하게 점수 부여함수
         int[] Give_student_score(int number)
         {
             int[] student_scores = new int[students_number + 1];
@@ -43,11 +52,12 @@ namespace practice8_for_
             return student_scores;
         }
 
-        //출력
+        //출력함수
         void student_name_score_print(int[] scores)
         {
             //textBox_result 초기화
             textBox_result.Text = "";
+            
             //반복문을 통해 배열의 데이터 정해진 틀로 출력
             for (int i = 1; i < students_number + 1; i++)
             {
