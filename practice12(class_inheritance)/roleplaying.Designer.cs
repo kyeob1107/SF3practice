@@ -44,7 +44,7 @@
             this.textBox_result.Name = "textBox_result";
             this.textBox_result.ReadOnly = true;
             this.textBox_result.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_result.Size = new System.Drawing.Size(343, 143);
+            this.textBox_result.Size = new System.Drawing.Size(433, 143);
             this.textBox_result.TabIndex = 2;
             // 
             // button_input
@@ -108,7 +108,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(369, 326);
+            this.ClientSize = new System.Drawing.Size(458, 326);
             this.Controls.Add(this.listBox_fighter2);
             this.Controls.Add(this.listBox_fighter1);
             this.Controls.Add(this.label2);

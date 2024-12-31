@@ -44,23 +44,26 @@ namespace practice12_class_inheritance_
                 //textBox_result.Text = $"{fighter1.Honor}, {fighter2.Honor}"; //확인용
                 if (fighter1.Honor * fighter2.Honor > 0)
                 {
-                    textBox_result.Text += "둘은 아군입니다 싸우지말고 사이좋게 지내세요";
+                    textBox_result.Text = "둘은 아군입니다 싸우지말고 사이좋게 지내세요\r\n";
                     //상호작용 넣기?
                 }
                 else
                 {
                     int turnCount = 1;
+                    textBox_result.Text = "";
                     while (fighter1.Hp > 0 && fighter2.Hp >0)
                     {
-                        label1.Text = $"체력: {fighter1.Hp}, 공격력: {fighter1.Power}";
-                        label2.Text = $"체력: {fighter2.Hp}, 공격력: {fighter2.Power}";
+                        textBox_result.Text += $"=========={turnCount}번째 턴입니다============\r\n";
 
                         fighter2.takeDamage(fighter1.attack());
+                        textBox_result.Text += $"{selectCharcter1}가 {selectCharcter2}에게 " +
+                                                                $"{fighter1.attack()}만큼 데미지를 입혔습니다\r\n";
                         fighter1.takeDamage(fighter2.attack());
-
+                        textBox_result.Text += $"{selectCharcter2}가 {selectCharcter1}에게 " +
+                                                                $"{fighter2.attack()}만큼 데미지를 입혔습니다\r\n";
                         SpecialAction(selectCharcter1, fighter1, fighter2);
                         SpecialAction(selectCharcter2, fighter2, fighter1);
-                        textBox_result.Text += $"=========={turnCount}번째 턴입니다============\r\n";
+                        
                         textBox_result.Text += $"{selectCharcter1}의 체력은 {fighter1.Hp}입니다\r\n";
                         textBox_result.Text += $"{selectCharcter2}의 체력은 {fighter2.Hp}입니다\r\n";
                     }
@@ -82,10 +85,14 @@ namespace practice12_class_inheritance_
             if (selectCharcter == "slime")
             {
                 target.takeDamage(((Slime)actor).acidAttack());
+                textBox_result.Text += $"[특별행동]{selectCharcter}가 산성공격을" +
+                                       $"{((Slime)actor).acidAttack()}만큼 데미지를 입혔습니다\r\n";
             }
             else if (selectCharcter == "orc")
             {
                 ((Orc)actor).selfHeal();
+                textBox_result.Text += $"[특별행동]{selectCharcter}가 자신의 체력을" +
+                                       $"{((Orc)actor).selfHeal()}만큼 회복했습니다\r\n";
             }
         }
 

@@ -42,11 +42,11 @@ namespace practice12_class_inheritance_
             this.power = 15;
         }
 
-        public void selfHeal()
+        public int selfHeal()
         {
             int healValue = this.hp / 10;
             this.hp += healValue;
-            //return healValue;
+            return healValue;
         }
     }
 }
