@@ -31,8 +31,9 @@ namespace practice12_class_inheritance_
         //    player
         //}
 
-        private void button_input_Click(object sender, EventArgs e)
+        private void button_play_Click(object sender, EventArgs e)
         {
+            
             if (listBox_fighter1.SelectedItem != null && listBox_fighter2.SelectedItem != null)
             {
                 string selectCharcter1 = listBox_fighter1.SelectedItem.ToString();
@@ -67,6 +68,8 @@ namespace practice12_class_inheritance_
                         textBox_result.Text += $"{selectCharcter1}의 체력은 {fighter1.Hp}입니다\r\n";
                         textBox_result.Text += $"{selectCharcter2}의 체력은 {fighter2.Hp}입니다\r\n";
                     }
+                    if (fighter1.Hp > fighter2.Hp) MessageBox.Show($"{selectCharcter1} 승리!!");
+                    else MessageBox.Show($"{selectCharcter2} 승리!!");
                 }
             }
             else
@@ -90,9 +93,9 @@ namespace practice12_class_inheritance_
             }
             else if (selectCharcter == "orc")
             {
-                ((Orc)actor).selfHeal();
+                int healValue = ((Orc)actor).selfHeal();
                 textBox_result.Text += $"[특별행동]{selectCharcter}가 자신의 체력을" +
-                                       $"{((Orc)actor).selfHeal()}만큼 회복했습니다\r\n";
+                                       $"{healValue}만큼 회복했습니다\r\n";
             }
         }
 
@@ -119,6 +122,14 @@ namespace practice12_class_inheritance_
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button_reset_Click(object sender, EventArgs e)
+        {
+            monster = new Slime();
+            player = new Player();
+            npc = new Npc();
+            textBox_result.Text = "";
         }
     }
 }

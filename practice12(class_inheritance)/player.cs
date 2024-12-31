@@ -19,7 +19,7 @@ namespace practice12_class_inheritance_
             this.power = 20;
         }
         
-        public int attack()
+        public override int attack()
         {
             int damage = this.power + level * 10;
             return damage;

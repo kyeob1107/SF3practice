@@ -36,7 +36,7 @@ namespace practice12_class_inheritance_
 
         
 
-        public int attack()
+        public virtual int attack()
         {
             return power;
         }

@@ -35,16 +35,22 @@ namespace practice12_class_inheritance_
 
     internal class Orc : Monster
     {
+        int max_hp;
         public Orc()
         {
             this.exp = 50;
             this.hp = 400;
             this.power = 15;
+            max_hp = this.hp;
         }
 
         public int selfHeal()
         {
-            int healValue = this.hp / 10;
+            int healValue = max_hp / 10;
+            if (!(this.hp + healValue < max_hp))
+            {
+                healValue = max_hp - this.hp;
+            }
             this.hp += healValue;
             return healValue;
         }
