@@ -77,6 +77,7 @@ namespace practice17_multithred_backgroundWorker_
             // 그냥 단순 while로 했을 경우
             while (true)
             {
+                Thread.Sleep(30); //30ms
                 progressBar2.Value += 1;
 
                 if (progressBar2.Value >= 100) break;
