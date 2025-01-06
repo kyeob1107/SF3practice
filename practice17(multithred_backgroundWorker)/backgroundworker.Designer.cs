@@ -30,6 +30,7 @@
         {
             this.button_input = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.progressBar2 = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // button_input
@@ -49,11 +50,19 @@
             this.progressBar1.Size = new System.Drawing.Size(825, 23);
             this.progressBar1.TabIndex = 2;
             // 
+            // progressBar2
+            // 
+            this.progressBar2.Location = new System.Drawing.Point(32, 14);
+            this.progressBar2.Name = "progressBar2";
+            this.progressBar2.Size = new System.Drawing.Size(825, 23);
+            this.progressBar2.TabIndex = 3;
+            // 
             // backgroundworker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(923, 129);
+            this.Controls.Add(this.progressBar2);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.button_input);
             this.Name = "backgroundworker";
@@ -65,6 +74,7 @@
         #endregion
         private System.Windows.Forms.Button button_input;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar progressBar2;
     }
 }
 

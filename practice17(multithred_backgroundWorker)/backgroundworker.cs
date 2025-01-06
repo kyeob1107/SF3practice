@@ -65,19 +65,21 @@ namespace practice17_multithred_backgroundWorker_
 
         private void button_input_Click(object sender, EventArgs e)
         {
-            // 그냥 단순 while로 했을 경우
-            //while (true)
-            //{
-            //    progressBar1.Value += 1;
-
-            //    if (progressBar1.Value >= 100) break;
-            //}
             
+
             // 백그라운드워커가 실행중일 때 실행하면 에러가 나기때문에 방지하기 위해서 실행중이냐 확인하는 것으로
             // 실행 중 아닐 때만 실행하도록 설정
             if (!this.worker.IsBusy)
             {
                 this.worker.RunWorkerAsync();
+            }
+
+            // 그냥 단순 while로 했을 경우
+            while (true)
+            {
+                progressBar2.Value += 1;
+
+                if (progressBar2.Value >= 100) break;
             }
         }
     }
