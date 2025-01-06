@@ -32,10 +32,10 @@ namespace practice17._5_another_backgroundWorker_practice_
             this.worker.WorkerSupportsCancellation = true;
 
             // BackgroundWokrer가 UI스레드와 별개로 수행할 메소드 - 검색 및 추가하는 메소드를 비동기로 이용
-            this.worker.DoWork += new DoWorkEventHandler(SearchDisplayFile);
+            this.worker.DoWork += new DoWorkEventHandler(SearchFile);
             //e 라는 거 이용해서 인자 입력받는 방법 있다고 하는데 하는 법 찾아보기
             // ReportProgress()메소드가 수행될때 메소드
-            //this.worker.ProgressChanged += new ProgressChangedEventHandler(Worker_progressChanged);
+            this.worker.ProgressChanged += new ProgressChangedEventHandler(AddFile_ForDisplay);
             // ReportProgress()가 100으로 호출되면 마지막에 한 번 실행되는 메소드
             this.worker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(Worker_complete);
 
@@ -54,7 +54,7 @@ namespace practice17._5_another_backgroundWorker_practice_
             }
         }
 
-        private void SearchDisplayFile(object sender, EventArgs e)
+        private void SearchFile(object sender, DoWorkEventArgs e)
         {
             try
             { 
@@ -64,10 +64,18 @@ namespace practice17._5_another_backgroundWorker_practice_
                 // 검색 결과를 listBox에 추가
                 foreach (string file in files)
                 {
-                    listBox_files.Items.Add(Path.GetFileName(file));
+                    this.worker.ReportProgress(0, file);
                 }
             }
-            catch { }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void AddFile_ForDisplay(object sender, ProgressChangedEventArgs e)
+        {
+            listBox_files.Items.Add(Path.GetFileName(e.UserState as string));
         }
 
         void Worker_complete(object sender, EventArgs e)
